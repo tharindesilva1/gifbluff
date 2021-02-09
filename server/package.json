@@ -1,0 +1,32 @@
+{
+    "name": "gif_server",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node dist/app.js",
+        "postinstall": "tsc",
+        "dev": "ts-node-dev --respawn src/app.ts"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.9.2",
+        "http-status-codes": "^2.1.4",
+        "morgan": "^1.10.0",
+        "redis": "^3.0.2",
+        "socket.io": "^3.1.0"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.19.0",
+        "@types/express": "^4.17.11",
+        "@types/morgan": "^1.9.2",
+        "@types/node": "^14.14.22",
+        "@types/redis": "^2.8.28",
+        "@types/socket.io": "^2.1.12",
+        "ts-node": "^9.1.1",
+        "ts-node-dev": "^1.1.1",
+        "typescript": "^4.1.3"
+    }
+}

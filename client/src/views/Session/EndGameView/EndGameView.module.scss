@@ -1,0 +1,27 @@
+.brief {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    place-content: center;
+
+    .imposterName {
+        color: rgb(255, 0, 0);
+    }
+
+    .endDescription,
+    .result {
+        margin-top: 2rem;
+    }
+
+    p {
+        margin: 0.5rem 0.75rem;
+    }
+
+    button {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4rem;
+        height: 3rem;
+        width: 8rem;
+    }
+}

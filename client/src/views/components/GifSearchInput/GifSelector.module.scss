@@ -1,0 +1,97 @@
+@mixin dark-scrollbar {
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #979696;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #555;
+    }
+}
+
+.gifSelector {
+    height: 100%;
+    background-color: rgb(33, 33, 33);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+
+    .searchInput {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 0.25rem;
+        margin-bottom: 0.1rem;
+        flex: 0 0 2rem;
+        width: 100%;
+    }
+
+    .gifPreview {
+        @include dark-scrollbar;
+        flex: 1 1 auto;
+        background-color: rgb(33, 33, 33);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow-y: auto;
+
+        .loading {
+            grid-column: 1/3;
+            place-self: center;
+        }
+
+        p {
+            grid-column: 1/-1;
+            place-self: center;
+            font-size: 1rem;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            z-index: 0;
+
+            &.a {
+                padding: 0 0.5rem;
+                img:first-of-type {
+                    margin-top: 0.5rem;
+                }
+            }
+
+            &.b {
+                padding-right: 0.5rem;
+                img:first-of-type {
+                    margin-top: 0.5rem;
+                }
+            }
+
+            img {
+                position: relative;
+                width: 100%;
+                margin: 0.25rem 0;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+        }
+
+        .scrollTracker {
+            grid-column: 1/3;
+            height: 3rem;
+            display: grid;
+            justify-content: center;
+            align-content: flex-end;
+        }
+
+        .searchHelper {
+            font-size: 1rem;
+            grid-column: 1/-1;
+            align-self: flex-end;
+        }
+    }
+}

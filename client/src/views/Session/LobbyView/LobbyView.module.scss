@@ -1,0 +1,26 @@
+.brief {
+    > p {
+        margin: 2rem;
+        span {
+            // game code
+            font-style: italic;
+            color: red;
+        }
+    }
+}
+
+.playerList {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    height: 12rem;
+
+    li {
+        margin: 1rem;
+    }
+}
+
+.startButton {
+    width: 8rem;
+    height: 3.5rem;
+}

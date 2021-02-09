@@ -1,0 +1,56 @@
+.session {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .basePanel {
+        height: 25rem;
+        width: 20rem;
+    }
+
+    .lobbyView {
+        height: 30rem;
+        max-width: 35rem;
+        width: 100%;
+
+        > div:first-child {
+            display: flex;
+            flex-direction: column;
+            place-content: center;
+            align-items: center;
+        }
+    }
+
+    .selectGifView {
+        max-width: 50rem;
+        max-height: 40rem;
+        height: 100%;
+        width: 100%;
+
+        > div:first-child {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 3fr 1fr;
+        }
+    }
+
+    .votePlayerView {
+        max-height: 60rem;
+        max-width: 60rem;
+        height: max-content;
+        width: 100%;
+
+        > div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .endGameView {
+        width: 100%;
+        max-width: 35rem;
+    }
+}

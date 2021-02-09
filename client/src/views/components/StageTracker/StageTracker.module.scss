@@ -1,0 +1,34 @@
+.gameTracker {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    ol,
+    li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        user-select: none;
+    }
+
+    ol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateZ(0);
+    }
+
+    li {
+        margin: 0.5rem 0.75rem;
+    }
+
+    .stage {
+        font-size: 1rem;
+        position: relative;
+
+        &.current {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .time {
+        .secs {
+            font-size: 2rem;
+        }
+
+        .milSecs {
+            font-size: 1rem;
+        }
+    }
+
+    .ringSvg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+
+        .ringProgress {
+            fill: none;
+            stroke-linecap: round;
+            stroke: #ffffff;
+        }
+
+        .ringTrack {
+            fill: none;
+            stroke-linecap: round;
+            stroke: #ffffff;
+            stroke-opacity: 0.3;
+        }
+    }
+}
