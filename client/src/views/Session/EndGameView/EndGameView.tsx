@@ -41,8 +41,6 @@ const renderResults = (players: IPlayer[], role: PlayerRole, onGoHome: () => voi
     const mostVotes = Math.max(...votesOnly);
     const hasNoTies = votesOnly.filter(votes => votes === mostVotes).length === 1;
 
-    console.log(players)
-
     const renderWin = () => <motion.p className={[styles.briefText, styles.result].join(" ")} variants={briefingTextVariants} >{"You win!"}</motion.p>
     const renderLose = () => <motion.p className={[styles.briefText, styles.result].join(" ")} variants={briefingTextVariants}>{"You lose!"}</motion.p>
     const renderHomeButton = () => <Button onClick={onGoHome}>{"Home"}</Button>

@@ -31,7 +31,6 @@ export const Session: FunctionComponent<SessionProps> = ({
     }
 
     const onStateChange = (state: IClientSession) => {
-        console.log(state)
         setSessionState(state);
     }
 
@@ -41,7 +40,6 @@ export const Session: FunctionComponent<SessionProps> = ({
 
     useEffect(() => {
         const callback = (success: boolean) => {
-            console.log(success)
             if (!success) goHome();
         }
         if (!sessionInfo?.sessionId || !sessionInfo?.playerId) history.push("./");
@@ -56,7 +54,6 @@ export const Session: FunctionComponent<SessionProps> = ({
         //     })
         // }, 6000)
         return () => {
-            console.log("disconnected")
             serverWorker.disconnect();
         }
     }, [])

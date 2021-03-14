@@ -10,7 +10,7 @@ let io: Server;
 export const init = (server: httpServer) => {
     io = require('socket.io')(server, {
         cors: {
-            origin: "*",
+            origin: process.env.FRONTEND_URL,
             methods: ["GET", "POST"]
         }
     });

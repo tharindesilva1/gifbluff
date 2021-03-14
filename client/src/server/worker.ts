@@ -73,10 +73,8 @@ export class ServerWorker {
 
         // sent when client refreshes, server will catch client up
         this.socket.on(ServerEvent.BOOTSTRAP_STATE, (state: ISession | ConnectionError.GENERIC) => {
-            console.log({ log: 'bootstrap state', state: state });
 
             if (state === ConnectionError.GENERIC) {
-                console.log('here')
                 if (cb) cb(false);
             } else {
                 this.sessionState.status = state.status;
@@ -119,8 +117,6 @@ export class ServerWorker {
             this.sessionUpdateCallback(this.sessionState)
 
             this.socket.on(ServerEvent.SESSION_STATUS, (update: { status: SessionStatus, timeLeft: number, question?: IQuestion }) => {
-                console.log({ log: 'session status update', res: update });
-
                 this.sessionState.status = update.status;
                 this.sessionState.timeLeft = update.timeLeft;
 
@@ -142,7 +138,6 @@ export class ServerWorker {
             })
 
             this.socket.on(ServerEvent.PRIVATE_INFO_RESPONSE, (res: { role?: PlayerRole, question?: IQuestion }) => {
-                console.log({ log: 'private info', res: res });
                 if (res.role) this.sessionState.selfRole = res.role;
                 if (res.question) this.sessionState.question = res.question;
                 this.notifySessionListener();
@@ -152,7 +147,6 @@ export class ServerWorker {
             this.socket.on(ServerEvent.PLAYER_CHANGE, (res: IPlayer[] | ConnectionError.VOTED_SELF) => {
                 if (res !== ConnectionError.VOTED_SELF) {
                     this.sessionState.players = res.filter(x => x);
-                    console.log({ log: 'players changed', state: this.sessionState });
                     this.notifySessionListener();
                 }
             });
