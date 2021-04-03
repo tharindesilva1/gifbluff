@@ -41,7 +41,7 @@
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
             animation: strokeOffset 0.5s linear forwards;
-            animation-delay: 1s + $i * 0.3s;
+            animation-delay: 0.5s + $i * 0.3s;
           }
         }
       }
@@ -56,10 +56,11 @@
     background: linear-gradient(to right, #ff0000, #000288);
     transform: translate(202px, 488px) rotate(334deg);
     font-size: 2.5rem;
-    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, text-shadow 0.25s;
 
     &:hover {
       box-shadow: 0 0 8px rgba(255, 255, 255, 1);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
     }
   }
 }
