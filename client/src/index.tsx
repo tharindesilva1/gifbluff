@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { wrap } from "comlink";
 
 import "./reset.scss";
@@ -11,6 +11,7 @@ import { Home } from "./views/Home/Home";
 import { Session } from "./views/Session/Session";
 import { ServerWorker } from "./server/worker";
 import { AnimateSharedLayout } from "framer-motion";
+import Landing from "./views/Landing/Landing";
 
 function initServerWorker() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -21,7 +22,6 @@ function initServerWorker() {
   return wrap<ServerWorker>(worker);
 }
 
-
 const App = () => {
   const worker = initServerWorker();
 
@@ -30,13 +30,17 @@ const App = () => {
       <SessionInfoProvider serverWorker={worker}>
         <AnimateSharedLayout>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Landing} />
+            <Route path="/home" exact component={Home} />
             <Route path="/session" exact component={Session} />
-            <Route path="/" render={() => <span>{"Huh, this page doesn't exist"}</span>} />
+            <Route
+              path="/"
+              render={() => <span>{"Huh, this page doesn't exist"}</span>}
+            />
           </Switch>
         </AnimateSharedLayout>
-      </SessionInfoProvider >
-    </BrowserRouter >
+      </SessionInfoProvider>
+    </BrowserRouter>
   );
 };
 

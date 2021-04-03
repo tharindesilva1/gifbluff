@@ -3,7 +3,7 @@
     $border-radius: 0.75rem;
     margin: -$border;
     border-radius: $border-radius;
-    background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 2, 136));
+    background: linear-gradient(to right, #ff0000, #000288);
     .panel {
         z-index: 0;
         background-image: radial-gradient(farthest-corner at 0 0, rgb(77, 66, 66) 0%, rgb(48, 46, 40) 100%);
