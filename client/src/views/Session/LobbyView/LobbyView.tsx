@@ -46,7 +46,7 @@ export const LobbyView: FunctionComponent<LobbyViewProps> = ({
   onStartGame,
 }) => {
   let startText =
-    "You need at least 2 more player to start the game (demo start available, although it's a bit pointless!)";
+    "You need at least 2 more players to start the game (demo start available, although it's a bit pointless!)";
   if (players.length === 2)
     startText =
       "You need at least 1 more player to start the game (demo start available, although it's a bit pointless!)";
